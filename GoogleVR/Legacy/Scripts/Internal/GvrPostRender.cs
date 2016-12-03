@@ -125,7 +125,9 @@ public class GvrPostRender : MonoBehaviour {
     distortionMesh.uv = tex;
     distortionMesh.colors = colors;
     distortionMesh.triangles = indices;
+#if !UNITY_5_5_OR_NEWER
     distortionMesh.Optimize();
+#endif
     distortionMesh.UploadMeshData(true);
   }
 
